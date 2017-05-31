@@ -464,7 +464,7 @@ namespace meta
         using index_sequence = integer_sequence<std::size_t, Is...>;
 
 #if !defined(META_DOXYGEN_INVOKED) &&                                        \
-    ((defined(__clang__) && __clang_major__ >= 3 && __clang_minor__ >= 8) || \
+    ((defined(__clang__) && __clang_major__ >= 3 && __clang_minor__ >= 8 && !defined(__ANDROID__)) || \
      (defined(_MSC_VER) && _MSC_FULL_VER >= 190023918))
         // Implement make_integer_sequence and make_index_sequence with the
         // __make_integer_seq builtin on compilers that provide it. (Redirect
